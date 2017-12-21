@@ -11,10 +11,15 @@
 |
 */
 
+//Index
 Route::get('/', function () {
     return view('welcome');
 });
 
+//CMS Routes
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Contact form Routes
+Route::get('/contact', 'ContactController@create');
+Route::post('/contact', 'ContactController@store');
