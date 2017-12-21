@@ -1,3 +1,5 @@
+@extends('welcome')
+
 @section('content')
 
 <div class="content">

@@ -13,7 +13,7 @@
 
 //Index
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.index');
 });
 
 //CMS Routes
