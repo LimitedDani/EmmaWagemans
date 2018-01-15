@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Contact;
 
 class ContactController extends Controller
 {
+
     public function create()
     {
         return view('contact.index');
@@ -29,7 +31,8 @@ class ContactController extends Controller
     //dit moet nog gefixed worden, er is nu niks...
     public function show()
     {
-        $contact = Contact::all();
-        return view('berichten')->with('$contact', $contact);
-    }
+        
+        $contacts = Contact::all();
+        return view('berichten', compact('contacts'));
+}
 }

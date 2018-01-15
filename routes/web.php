@@ -21,7 +21,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //get contacts niet 100% sure of het goed was.
-Route::get('/berichten', 'ContactController@show');
+Route::get('/berichten', 'ContactController@show')->middleware('auth');
 
 //Contact form Routes
 Route::get('/contact', 'ContactController@create');

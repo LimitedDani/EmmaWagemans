@@ -13,16 +13,21 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    @foreach ($contact as $contact)
-
-                    <li class="list-group-item">
                     
-                        {{ $contact->text }}
 
-                    </li>
+                    <div class="list-group">
+                    @foreach ($contacts as $contact)
+
+                    <a href="mailto:{{ $contact->email }}?SUBJECT=Re:" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">{{ $contact->email }}</h5>
+                            <small>{{ $contact->created_at->diffForHumans() }}</small>
+                        </div>
+                            <p class="mb-1">{{ $contact->text }}</p>
+                    </a>
 
                     @endforeach
+                    </div>
 
                 </div>
             </div>
