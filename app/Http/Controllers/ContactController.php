@@ -25,4 +25,11 @@ class ContactController extends Controller
         return redirect('/');
 
     }
+
+    //dit moet nog gefixed worden, er is nu niks...
+    public function show()
+    {
+        $contact = Contact::all();
+        return view('berichten')->with('$contact', $contact);
+    }
 }

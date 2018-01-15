@@ -20,6 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
+//get contacts niet 100% sure of het goed was.
+Route::get('/berichten', 'ContactController@show');
+
 //Contact form Routes
 Route::get('/contact', 'ContactController@create');
 Route::post('/contact', 'ContactController@store');
