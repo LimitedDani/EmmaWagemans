@@ -9,6 +9,11 @@ use App\Contact;
 class ContactController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['create', 'store']);
+    }
+
     public function create()
     {
         return view('contact.index');
@@ -28,11 +33,10 @@ class ContactController extends Controller
 
     }
 
-    //dit moet nog gefixed worden, er is nu niks...
     public function show()
     {
-        
-        $contacts = Contact::all();
+
+        $contacts = Contact::latest()->get();
         return view('berichten', compact('contacts'));
-}
+    }
 }
