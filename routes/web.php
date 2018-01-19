@@ -16,13 +16,31 @@ Route::get('/', function () {
     return view('layouts.index');
 });
 
+//Diensten
+Route::get('/diensten', function (){
+    return view('diensten.index');
+});
+
+//Portfolio
+Route::get('/portfolio', function (){
+    return view('portfolio.index');
+});
+
+//Tarieven
+Route::get('/tarieven', function (){
+    return view('tarieven.index');
+});
+
+//Contact form 
+Route::get('/contact', 'ContactController@create');
+Route::post('/contact', 'ContactController@store');
+
+
 //CMS Routes
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
-//get contacts niet 100% sure of het goed was.
+//CMS Berichten, delete en show
 Route::get('/berichten', 'ContactController@show');
+Route::delete('/berichten/{contact}', 'ContactController@delete');
 
-//Contact form Routes
-Route::get('/contact', 'ContactController@create');
-Route::post('/contact', 'ContactController@store');

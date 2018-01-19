@@ -39,4 +39,12 @@ class ContactController extends Controller
         $contacts = Contact::latest()->get();
         return view('berichten', compact('contacts'));
     }
+
+    public function delete(Contact $contact)
+    {
+        $id = $contact->id;
+        $contact = Contact::find($id);
+        $contact->delete();
+        return back();
+    }
 }
