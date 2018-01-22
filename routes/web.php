@@ -12,24 +12,16 @@
 */
 
 //Index
-Route::get('/', function () {
-    return view('layouts.index');
-});
+Route::get('/', 'IndexController@create');
 
 //Diensten
-Route::get('/diensten', function (){
-    return view('diensten.index');
-});
+Route::get('/diensten', 'DienstenController@create');
 
 //Portfolio
-Route::get('/portfolio', function (){
-    return view('portfolio.index');
-});
+Route::get('/portfolio', 'PortfolioController@create');
 
 //Tarieven
-Route::get('/tarieven', function (){
-    return view('tarieven.index');
-});
+Route::get('/tarieven', 'TarievenController@create');
 
 //Contact form 
 Route::get('/contact', 'ContactController@create');

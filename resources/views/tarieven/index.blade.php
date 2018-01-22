@@ -1,1 +1,5 @@
-tarieven
+@section('title')
+
+Tarieven |
+
+@endsection

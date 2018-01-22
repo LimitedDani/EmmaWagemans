@@ -1,10 +1,16 @@
+@extends('welcome')
+
 @section('title')
 
-| Contact
+Contact |
 
 @endsection
 
-@extends('welcome')
+@section('assets')
+
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+@endsection
 
 @section('content')
 

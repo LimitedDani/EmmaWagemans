@@ -1,1 +1,5 @@
-diensten
+@section('title')
+
+Diensten |
+
+@endsection

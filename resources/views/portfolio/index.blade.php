@@ -1,1 +1,5 @@
-portfolio
+@section('title')
+
+Portfolio |
+
+@endsection
