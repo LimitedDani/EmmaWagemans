@@ -7,28 +7,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>@yield('title') EmmaWagemans</title>
 	<!-- Styles -->
-	@yield('assets')	
+	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body>
+	
+	@include('layouts.nav')
 
-		@if (Route::has('login'))
-            <a href="/contact">Contact</a>
-			@auth
-			<a href="{{ url('/home') }}">Home</a>
-			@else
-			<a href="{{ route('login') }}">Login</a>
-			<a href="{{ route('register') }}">Register</a>
-			@endauth			
-		@endif
+	@yield('content')
 
-		<div class="content">
 
-			@yield('content')
-
-		</div>
-	</div>
-	<script src="js/home.js"></script>
 </body>
-
 </html>
