@@ -1,90 +1,50 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
+html, body {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
+    height: 100vh;
     margin: 0;
-    font-family: Arial;
-    font-size: 17px;
 }
 
-#myVideo {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%; 
-    min-height: 100%;   
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
 }
 
 .content {
-    position: fixed;
-    bottom: 0;
-    /*background: rgba(0, 0, 0, 0.5);*/
-    color: #f1f1f1;
-    width: 100%;
-    padding: 20px;
-    overflow: auto;
+    text-align: center;
 }
 
-.binnen {
-    float: right;
-    margin: 0 10px 10px 0; /* for demo only */
+.title {
+    font-size: 84px;
 }
 
-#myBtn {
-    width: 55px;
-    font-size: 18px;
-    padding: 10px;
-    border: none;
-    /*background: #000;*/
-    color: #fff;
-    cursor: pointer;
+.links>a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
-#myBtn2 {
-    width: 55px;
-    font-size: 18px;
-    padding: 10px;
-    border: none;
-    /*background: #000;*/
-    color: #fff;
-    cursor: pointer;
+.m-b-md {
+    margin-bottom: 30px;
 }
-
-img {
-	width: 55px;
-}
-
-#flex-container {
-        display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-        display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-        display: -webkit-flex;     /* NEW - Chrome */
-        display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
-        -webkit-box-flex-direction: row;
-        -moz-box-flex-direction: row;
-        -webkit-flex-direction: row;
-        flex-direction: row;
-        position: fixed;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    #flex-item {
-        margin: auto;
-    }
-
-    #flex-item p {
-    	color: #fff;
-    	font-size: 75px;
-    	font-weight: bold;
-    	height: 30px;
-    }
-
-    div #undertext {
-    	color: #fff;
-    	font-size: 20px;
-    	text-align: center;
-    }
