@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Edit Portfolio</div>
+                <div class="panel-heading">Edit Portfolio item</div>
                 <div class="panel-body">
                     @if (session('status'))
                     <div class="alert alert-success">
@@ -41,7 +41,6 @@
                             <button type="submit" class="btn btn-success">Wijzig</button>
                         </div>
                     </form>
-                    <hr>
                 </div>
             </div>
         </div>

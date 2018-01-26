@@ -21,4 +21,9 @@ class TarievenController extends Controller
     {
         return view('tarieven.edit');
     }
+
+    public function show()
+    {
+        return view('tarieven.show');
+    }
 }

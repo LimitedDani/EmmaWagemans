@@ -21,4 +21,9 @@ class PortfolioController extends Controller
     {
         return view('portfolio.edit');
     }
+
+    public function show()
+    {
+        return view('portfolio.show');
+    }
 }

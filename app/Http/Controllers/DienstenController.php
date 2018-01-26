@@ -22,4 +22,9 @@ class DienstenController extends Controller
     {
         return view('diensten.edit');
     }
+
+    public function show()
+    {
+        return view('diensten.show');
+    }
 }

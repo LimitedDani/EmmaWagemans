@@ -41,7 +41,6 @@
                             <button type="submit" class="btn btn-success">Wijzig</button>
                         </div>
                     </form>
-                    <hr>
                 </div>
             </div>
         </div>

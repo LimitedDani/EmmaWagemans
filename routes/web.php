@@ -36,8 +36,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/berichten', 'ContactController@show');
 Route::delete('/berichten/{contact}', 'ContactController@delete');
 
-//Edit dingen
+//Haal lijst op
+Route::get('/edit/portfolio', 'PortfolioController@show');
+Route::get('/edit/diensten', 'DienstenController@show');
+Route::get('/edit/tarieven', 'TarievenController@show');
+
+//Edit pagina's
 Route::get('/edit/index', 'IndexController@edit');
-Route::get('/edit/portfolio', 'PortfolioController@edit');
-Route::get('/edit/diensten', 'DienstenController@edit');
-Route::get('/edit/tarieven', 'TarievenController@edit');
+Route::get('/edit/portfolio/{portfolio}', 'PortfolioController@edit');
+Route::get('/edit/diensten/{diensten}', 'DienstenController@edit');
+Route::get('/edit/tarieven/{tarieven}', 'TarievenController@edit');
