@@ -38,11 +38,10 @@
                                     Pagina's <span class="caret"></span>
                             </a>
 							<ul class="dropdown-menu">
-								<li><a href="#">Index</a></li>
-								<li><a href="#">Portfolio</a></li>
-								<li><a href="#">Diensten</a></li>
-								<li><a href="#">Tarieven</a></li>
-								<li><a href="#">Contact</a></li>
+								<li><a href="/edit/index">Index</a></li>
+								<li><a href="/edit/portfolio">Portfolio</a></li>
+								<li><a href="/edit/tarieven">Tarieven</a></li>
+								<li><a href="/edit/diensten">Diensten</a></li>
 							</ul>
 						</li>
 						@endif
