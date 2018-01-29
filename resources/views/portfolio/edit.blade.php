@@ -11,31 +11,33 @@
                         {{ session('status') }}
                     </div>
                     @endif
-                    <form action="">
+                    @include ('layouts.errors')
+                    <form action="/edit/portfolio/{{$portfolio->id}}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
+                        {{ method_field('PATCH') }}
                         <div class="form-group">
                             <label for="text">Titel</label>
-                            <input type="text" class="form-control" id="title" value="Titel" name="title">
+                            <input type="text" class="form-control" id="title" value="{{$portfolio->title}}" name="title">
                         </div>
                         <div class="form-group">
                             <label for="subtitle">Sub Titel</label>
-                            <input type="subtitle" class="form-control" id="subtitle" value="Sub Titel" name="subtitle">
+                            <input type="subtitle" class="form-control" id="subtitle" value="{{$portfolio->subtitle}}" name="subtitle">
                         </div>
                         <div class="form-group">
                             <label for="text">Text</label>
-                            <textarea class="form-control" id="text" rows="4"></textarea>
+                            <textarea class="form-control" id="text" rows="4" name="text">{{$portfolio->text}}</textarea>
                         </div>
                         <div class="form-group">
-                            <label for="photo">Afbeelding</label>
+                            <label for="photo">Afbeelding - {{$portfolio->photo1}}</label>
                             <input type="file" class="custom-file-input" id="photo" name="photo1">
                         </div>
                         <div class="form-group">
-                            <label for="photo2">Afbeelding 2</label>
+                            <label for="photo2">Afbeelding 2 - {{$portfolio->photo2}}</label>
                             <input type="file" class="custom-file-input" id="photo2" name="photo2">
                         </div>
                         <div class="form-group">
                             <label for="link">Link</label>
-                            <input type="text" class="form-control" id="link" value="https://www.test.nl" name="link">
+                            <input type="text" class="form-control" id="link" value="{{$portfolio->link}}" name="link">
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success">Wijzig</button>

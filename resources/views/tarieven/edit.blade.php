@@ -11,31 +11,33 @@
                         {{ session('status') }}
                     </div>
                     @endif
-                    <form action="">
+                    @include ('layouts.errors')
+                    <form action="/edit/tareiven/{{$tarieven->id}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
+                        {{ method_field('PATCH') }}
                         <div class="form-group">
                             <label for="text">Titel</label>
-                            <input type="text" class="form-control" id="title" value="Titel" name="title">
+                            <input type="text" class="form-control" id="title" value="{{$tarieven->title}}" name="title">
                         </div>
                         <div class="form-group">
                             <label for="subtitle">Sub Titel</label>
-                            <input type="subtitle" class="form-control" id="subtitle" value="Sub Titel" name="subtitle">
+                            <input type="subtitle" class="form-control" id="subtitle" value="{{$tarieven->subtitle}}" name="subtitle">
                         </div>
                         <div class="form-group">
                             <label for="price">Prijs</label>
-                            <input type="text" class="form-control" id="price" value="€12-," name="price">
+                            <input type="text" class="form-control" id="price" value="{{$tarieven->price}}" name="price">
                         </div>
                         <div class="form-group">
-                            <label for="photo">Afbeelding</label>
+                            <label for="photo">Afbeelding - {{$tarieven->photo}}</label>
                             <input type="file" class="custom-file-input" id="photo" name="photo">
                         </div>
                         <div class="form-group">
                             <label for="link">Link</label>
-                            <input type="text" class="form-control" id="link" value="https://www.test.nl" name="link">
+                            <input type="text" class="form-control" id="link" value="{{$tarieven->link}}" name="link">
                         </div>
                         <div class="form-group">
                             <label for="extra_info">Extra</label>
-                            <input type="text" class="form-control" id="extra_info" value="" name="extra_info">
+                            <input type="text" class="form-control" id="extra_info" value="{{$tarieven->extra_info}}" name="extra_info">
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success">Wijzig</button>

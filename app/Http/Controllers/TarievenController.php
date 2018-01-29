@@ -17,13 +17,27 @@ class TarievenController extends Controller
         return view('tarieven.index');
     }
 
-    public function edit()
-    {
-        return view('tarieven.edit');
-    }
-
     public function show()
     {
-        return view('tarieven.show');
+        $tarievens = tarieven::latest()->get();
+        return view('tarieven.show', compact('tarievens'));        
     }
+
+    public function edit(tarieven $tarieven)
+    {
+        return view('tarieven.edit', compact('tarieven'));
+    }
+
+    public function patch($id, Request $request)
+    {
+        $this->validate(request(), [
+            'title' => 'required|min:3',
+            'subtitle' => 'required|min:3',
+            'price' => 'required|min:3',
+            'photo' => 'file',
+            'link' => 'required|min:3',
+            'extra_info' => 'required|min:3'            
+        ]);
+    }
+
 }

@@ -46,3 +46,10 @@ Route::get('/edit/index', 'IndexController@edit');
 Route::get('/edit/portfolio/{portfolio}', 'PortfolioController@edit');
 Route::get('/edit/diensten/{diensten}', 'DienstenController@edit');
 Route::get('/edit/tarieven/{tarieven}', 'TarievenController@edit');
+
+//Sla bewerkte pagina's op
+Route::patch('/edit/index', 'IndexController@patch');
+Route::patch('/edit/portfolio/{portfolio}', 'PortfolioController@patch');
+Route::patch('/edit/diensten/{diensten}', 'DienstenController@patch');
+Route::patch('/edit/tarieven/{tarieven}', 'TarievenController@patch');
+

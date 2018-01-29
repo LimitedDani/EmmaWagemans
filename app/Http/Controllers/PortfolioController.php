@@ -17,13 +17,27 @@ class PortfolioController extends Controller
         return view('portfolio.index');
     }
 
-    public function edit()
-    {
-        return view('portfolio.edit');
-    }
-
     public function show()
     {
-        return view('portfolio.show');
+        $portfolios = portfolio::latest()->get();
+        return view('portfolio.show', compact('portfolios'));
+        
+    }
+
+    public function edit(portfolio $portfolio)
+    {
+        return view('portfolio.edit', compact('portfolio'));
+    }
+
+    public function patch($id, Request $request)
+    {
+        $this->validate(request(), [
+            'title' => 'required|min:3',
+            'subtitle' => 'required|min:3',
+            'text' => 'required|min:3',
+            'link' => 'required|min:3',
+            'photo1' => 'image',
+            'photo2' => 'image'
+        ]);
     }
 }

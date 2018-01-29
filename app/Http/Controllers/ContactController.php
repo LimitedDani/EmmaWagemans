@@ -35,7 +35,6 @@ class ContactController extends Controller
 
     public function show()
     {
-
         $contacts = Contact::latest()->get();
         return view('berichten', compact('contacts'));
     }

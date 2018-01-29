@@ -17,14 +17,25 @@ class DienstenController extends Controller
     {
         return view('diensten.index');
     }
-    
-    public function edit()
-    {
-        return view('diensten.edit');
-    }
 
     public function show()
     {
-        return view('diensten.show');
+        $dienstens = diensten::latest()->get();
+        return view('diensten.show', compact('dienstens'));        
+    }
+
+    public function edit(diensten $diensten)
+    {
+        return view('diensten.edit', compact('diensten'));
+    }
+
+    public function patch($id, Request $request)
+    {
+        $this->validate(request(), [
+            'title' => 'required|min:3',
+            'text' => 'required|min:3',
+            'link' => 'required|min:3',
+            'photo' => 'image'
+        ]);
     }
 }

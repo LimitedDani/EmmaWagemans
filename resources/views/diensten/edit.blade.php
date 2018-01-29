@@ -11,28 +11,31 @@
                         {{ session('status') }}
                     </div>
                     @endif
-                    <form action="">
+                    @include ('layouts.errors')
+                    <form action="/edit/diensten/{{$diensten->id}}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
+                        {{ method_field('PATCH') }}
                         <div class="form-group">
                             <label for="text">Titel</label>
-                            <input type="text" class="form-control" id="title" value="Titel" name="title">
+                            <input type="text" class="form-control" id="title" value="{{$diensten->title}}" name="title">
                         </div>
                         <div class="form-group">
                             <label for="text">Text</label>
-                            <textarea class="form-control" id="text" rows="4"></textarea>
+                            <textarea class="form-control" id="text" rows="4" name="text">{{$diensten->text}}</textarea>
                         </div>
                         <div class="form-group">
-                            <label for="photo">Afbeelding</label>
+                            <label for="photo">Afbeelding - {{$diensten->photo}}</label>
                             <input type="file" class="custom-file-input" id="photo" name="photo">
                         </div>
                         <div class="form-group">
                             <label for="link">Link</label>
-                            <input type="text" class="form-control" id="link" value="https://www.test.nl" name="link">
+                            <input type="text" class="form-control" id="link" value="{{$diensten->link}}" name="link">
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success">Wijzig</button>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>

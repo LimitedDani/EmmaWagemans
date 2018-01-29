@@ -12,7 +12,9 @@
                     </div>
                     @endif
                     <ul class="list-group">
-                        <a href="#" class="list-group-item list-group-item-action">Visagie</a>
+                            @foreach ($tarievens as $tarieven)
+                            <a href="/edit/tarieven/{{$tarieven->id}}" class="list-group-item list-group-item-action">{{$tarieven->title}}</a>
+                            @endforeach
                     </ul>
                 </div>
             </div>
