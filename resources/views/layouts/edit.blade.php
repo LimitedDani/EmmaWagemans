@@ -12,8 +12,9 @@
                     </div>
                     @endif
                     @include ('layouts.errors')
+
                     @foreach ($indices as $index)
-                    <form action="/edit/index/" method="POST" enctype="multipart/form-data">
+                    <form action="/edit/index/{{$index->id}}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         {{ method_field('PATCH') }}
                         <div class="form-group">

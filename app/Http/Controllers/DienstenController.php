@@ -29,7 +29,7 @@ class DienstenController extends Controller
         return view('diensten.edit', compact('diensten'));
     }
 
-    public function patch($id, Request $request)
+    public function update(Request $request, diensten $diensten)
     {
         $this->validate(request(), [
             'title' => 'required|min:3',
@@ -37,5 +37,9 @@ class DienstenController extends Controller
             'link' => 'required|min:3',
             'photo' => 'image'
         ]);
+
+        $diensten->update($request->all());
+        return back();
+
     }
 }

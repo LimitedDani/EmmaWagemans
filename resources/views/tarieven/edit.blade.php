@@ -12,7 +12,7 @@
                     </div>
                     @endif
                     @include ('layouts.errors')
-                    <form action="/edit/tareiven/{{$tarieven->id}" method="POST" enctype="multipart/form-data">
+                    <form action="/edit/tarieven/{{$tarieven->id}}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         {{ method_field('PATCH') }}
                         <div class="form-group">

@@ -13,7 +13,7 @@
                     @endif
                     <ul class="list-group">
                         @foreach ($portfolios as $portfolio)
-                        <a href="/edit/portfolio/{{$portfolio->id}}" class="list-group-item list-group-item-action">{{$portfolio->title}}</a>
+                        <a href="/edit/portfolio/{{$portfolio->id}}/show" class="list-group-item list-group-item-action">{{$portfolio->title}}</a>
                         @endforeach
                     </ul>
                 </div>

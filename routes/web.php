@@ -43,13 +43,12 @@ Route::get('/edit/tarieven', 'TarievenController@show');
 
 //Edit pagina's
 Route::get('/edit/index', 'IndexController@edit');
-Route::get('/edit/portfolio/{portfolio}', 'PortfolioController@edit');
-Route::get('/edit/diensten/{diensten}', 'DienstenController@edit');
-Route::get('/edit/tarieven/{tarieven}', 'TarievenController@edit');
+Route::get('/edit/portfolio/{portfolio}/show', 'PortfolioController@edit');
+Route::get('/edit/diensten/{diensten}/show', 'DienstenController@edit');
+Route::get('/edit/tarieven/{tarieven}/show', 'TarievenController@edit');
 
 //Sla bewerkte pagina's op
-Route::patch('/edit/index', 'IndexController@patch');
-Route::patch('/edit/portfolio/{portfolio}', 'PortfolioController@patch');
-Route::patch('/edit/diensten/{diensten}', 'DienstenController@patch');
-Route::patch('/edit/tarieven/{tarieven}', 'TarievenController@patch');
-
+Route::patch('/edit/index/{index}', 'IndexController@update');
+Route::patch('/edit/portfolio/{portfolio}', 'PortfolioController@update');
+Route::patch('/edit/diensten/{diensten}', 'DienstenController@update');
+Route::patch('/edit/tarieven/{tarieven}', 'TarievenController@update');

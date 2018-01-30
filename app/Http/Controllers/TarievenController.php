@@ -28,7 +28,7 @@ class TarievenController extends Controller
         return view('tarieven.edit', compact('tarieven'));
     }
 
-    public function patch($id, Request $request)
+    public function update(Request $request, tarieven $tarieven)
     {
         $this->validate(request(), [
             'title' => 'required|min:3',
@@ -38,6 +38,9 @@ class TarievenController extends Controller
             'link' => 'required|min:3',
             'extra_info' => 'required|min:3'            
         ]);
+
+        $tarieven->update($request->all());
+        return back();
     }
 
 }

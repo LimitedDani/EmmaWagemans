@@ -5,6 +5,11 @@ class index extends Model
 
 {
 
-    //
+    protected $fillable = [
+        'title',
+        'subtitle',
+        'video1',
+        'video2'
+    ];
 
 }

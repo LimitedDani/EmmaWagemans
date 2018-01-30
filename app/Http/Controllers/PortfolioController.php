@@ -29,7 +29,7 @@ class PortfolioController extends Controller
         return view('portfolio.edit', compact('portfolio'));
     }
 
-    public function patch($id, Request $request)
+    public function update(Request $request, portfolio $portfolio)
     {
         $this->validate(request(), [
             'title' => 'required|min:3',
@@ -39,5 +39,9 @@ class PortfolioController extends Controller
             'photo1' => 'image',
             'photo2' => 'image'
         ]);
+
+        $portfolio->update($request->all());
+        return back();
+
     }
 }

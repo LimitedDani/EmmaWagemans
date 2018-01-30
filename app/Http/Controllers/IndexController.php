@@ -17,13 +17,13 @@ class IndexController extends Controller
         return view('layouts.index');
     }
 
-    public function edit()
+    public function edit(index $index)
     {
         $indices = index::latest()->get();
         return view('layouts.edit', compact('indices'));
     }
 
-    public function patch(Request $request, $id)
+    public function update(Request $request, index $index)
     {
         $this->validate(request(), [
             'title' => 'required|min:3',
@@ -31,6 +31,10 @@ class IndexController extends Controller
             'video1' => 'file',
             'video2' => 'file'
         ]);
+        
+        $index->update($request->all());
+
+        return back();
 
     }
 }

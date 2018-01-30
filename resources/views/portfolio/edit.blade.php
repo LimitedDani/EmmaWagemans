@@ -13,8 +13,8 @@
                     @endif
                     @include ('layouts.errors')
                     <form action="/edit/portfolio/{{$portfolio->id}}" method="POST" enctype="multipart/form-data">
-                        {{ csrf_field() }}
                         {{ method_field('PATCH') }}
+                        {{ csrf_field() }}
                         <div class="form-group">
                             <label for="text">Titel</label>
                             <input type="text" class="form-control" id="title" value="{{$portfolio->title}}" name="title">
