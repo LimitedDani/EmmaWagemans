@@ -31,8 +31,23 @@ class IndexController extends Controller
             'video1' => 'file',
             'video2' => 'file'
         ]);
-        
-        $index->update($request->all());
+        $input = $request->all();
+        if (!empty($request['video1'])) {
+            $video = $request->file('video1');
+            $path = public_path(). "/videos/";
+            $filename = time() . '.' . $video->getClientOriginalExtension();
+            $video->move($path, $filename);
+            $input['video1'] = $filename;
+        }
+        if (!empty($request['video2'])) {
+            $video1 = $request->file('video2');
+            $path1 = public_path(). "/videos/";
+            $filename1 = time() . '.' . $video1->getClientOriginalExtension();
+            $video1->move($path1, $filename1);
+
+            $input['video2'] = $filename1;
+        }
+        $index->update($input);
 
         return back();
 

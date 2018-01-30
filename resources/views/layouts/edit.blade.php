@@ -26,11 +26,11 @@
                             <input type="subtitle" class="form-control" id="subtitle" value="{{$index->subtitle}}" name="subtitle">
                         </div>                        
                         <div class="form-group">
-                            <label for="video">Video - {{$index->video2}}</label>
+                            <label for="video">Video - {{$index->video1}}</label>
                             <input type="file" class="custom-file-input" id="video" name="video1">
                         </div>
                         <div class="form-group">
-                            <label for="video2">webm/gif - {{$index->video1}}</label>
+                            <label for="video2">webm/gif - {{$index->video2}}</label>
                             <input type="file" class="custom-file-input" id="video2" name="video2">
                         </div>                        
                         <div class="form-group">

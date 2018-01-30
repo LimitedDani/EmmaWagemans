@@ -38,8 +38,16 @@ class TarievenController extends Controller
             'link' => 'required|min:3',
             'extra_info' => 'required|min:3'            
         ]);
+        $input = $request->all();
+        if (!empty($request['photo'])) {
+            $image = $request->file('photo');
+            $path = public_path(). "/images/";
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $image->move($path, $filename);
 
-        $tarieven->update($request->all());
+            $input['photo'] = $filename;
+        }
+        $tarieven->update($input);
         return back();
     }
 

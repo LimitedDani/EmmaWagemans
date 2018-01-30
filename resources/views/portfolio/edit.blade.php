@@ -28,11 +28,13 @@
                             <textarea class="form-control" id="text" rows="4" name="text">{{$portfolio->text}}</textarea>
                         </div>
                         <div class="form-group">
-                            <label for="photo">Afbeelding - {{$portfolio->photo1}}</label>
+                            <label for="photo1">Afbeelding</label>
+                            <img src="{{ URL::to('/') }}/images/{{$portfolio->photo1}}" alt=""/>
                             <input type="file" class="custom-file-input" id="photo" name="photo1">
                         </div>
                         <div class="form-group">
-                            <label for="photo2">Afbeelding 2 - {{$portfolio->photo2}}</label>
+                            <label for="photo2">Afbeelding</label>
+                            <img src="{{ URL::to('/') }}/images/{{$portfolio->photo2}}" alt=""/>
                             <input type="file" class="custom-file-input" id="photo2" name="photo2">
                         </div>
                         <div class="form-group">

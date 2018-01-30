@@ -39,8 +39,24 @@ class PortfolioController extends Controller
             'photo1' => 'image',
             'photo2' => 'image'
         ]);
+        $input = $request->all();
+        if (!empty($request['photo1'])) {
+            $image = $request->file('photo1');
+            $path = public_path(). "/images/";
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $image->move($path, $filename);
 
-        $portfolio->update($request->all());
+            $input['photo1'] = $filename;
+        }
+        if (!empty($request['photo2'])) {
+            $image1 = $request->file('photo2');
+            $path1 = public_path(). "/images/";
+            $filename1 = time() . '.' . $image1->getClientOriginalExtension();
+            $image1->move($path1, $filename1);
+
+            $input['photo2'] = $filename1;
+        }
+        $portfolio->update($input);
         return back();
 
     }

@@ -28,7 +28,8 @@
                             <input type="text" class="form-control" id="price" value="{{$tarieven->price}}" name="price">
                         </div>
                         <div class="form-group">
-                            <label for="photo">Afbeelding - {{$tarieven->photo}}</label>
+                            <label for="photo">Afbeelding</label>
+                            <img src="{{ URL::to('/') }}/images/{{$tarieven->photo}}" alt=""/>
                             <input type="file" class="custom-file-input" id="photo" name="photo">
                         </div>
                         <div class="form-group">

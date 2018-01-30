@@ -37,8 +37,17 @@ class DienstenController extends Controller
             'link' => 'required|min:3',
             'photo' => 'image'
         ]);
+        $input = $request->all();
 
-        $diensten->update($request->all());
+        if (!empty($request['photo'])) {
+            $image = $request->file('photo');
+            $path = public_path(). "/images/";
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $image->move($path, $filename);
+
+            $input['photo'] = $filename;
+        }
+        $diensten->update($input);
         return back();
 
     }
